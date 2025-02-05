@@ -1,65 +1,48 @@
-# SOLBOX SMart Contract Test Anchor
+# SOLBOX Anchor
 
 ## Prerequisites
 
-Before you begin, make sure you have the following installed on your machine:
+Before you begin, ensure you have installed:
 
-- [Rust](https://www.rust-lang.org/): The programming language used for smart contract development.
-- [Solana CLI](https://docs.solana.com/cli/install-solana-cli-tools): Command-line tools for Solana.
-- [Anchor](https://project-serum.github.io/anchor/getting-started/installation.html): Framework for Solana smart contract development.
-- [Node.js](https://nodejs.org/): For running the frontend (if applicable).
+- [Rust](https://www.rust-lang.org/)
+- [Solana CLI](https://docs.solana.com/cli/install-solana-cli-tools)
+- [Anchor](https://project-serum.github.io/anchor/getting-started/installation.html)
+- [Node.js](https://nodejs.org/)
 
-## Getting Started
+## Building the Project
 
-### 1. Clone the repository
-Clone the repository to your local machine:
+Navigate to the project directory and run:
 
 ```bash
-git clone https://github.com/abhirupinspace/SOLBOX-Anchor.git
-cd SOLBOX-Anchor
-2. Install dependencies
-To install the required dependencies for Anchor:
-
-bash
-Copy
-Edit
 cargo build-bpf
-Make sure you have the required dependencies installed before building, such as Solana toolchain and Rust.
+```
 
-3. Set up Solana Cluster
-Set up your Solana environment to point to the appropriate cluster:
+## Deployment
 
-bash
-Copy
-Edit
+### 1. Set up Solana Cluster
+
+For Devnet:
+```bash
 solana config set --url https://api.devnet.solana.com
-For production, you can switch to the mainnet:
+```
 
-bash
-Copy
-Edit
+For Mainnet:
+```bash
 solana config set --url https://api.mainnet-beta.solana.com
-4. Deploy the Contract
-To deploy the contract to the Solana network:
+```
 
-bash
-Copy
-Edit
+### 2. Deploy the Contract
+
+Deploy to your configured Solana cluster:
+```bash
 anchor deploy
-5. Interact with the Smart Contract
-After deployment, interact with the smart contract using Solana’s CLI or any other method you prefer, such as a frontend dApp.
+```
 
-Example:
+## Testing the Program
 
-bash
-Copy
-Edit
-solana transfer <DESTINATION_ADDRESS> 1 --from <KEYPAIR_PATH>
-Development
-To run tests locally and interact with the program, you can use the following command:
-
-bash
-Copy
-Edit
+Run the test suite:
+```bash
 anchor test
-Make sure your Solana environment is correctly set up for the local network.
+```
+
+Ensure your Solana environment is properly configured for local testing. For Devnet or Mainnet testing, verify you have a funded wallet and valid network connection.
